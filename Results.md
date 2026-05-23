@@ -1,8 +1,8 @@
 # Phase-Space Noise Calibration for QAOA-Based Financial Optimization
 
-<p align="center">
-  <img src="assets/wigner_analysis.png" alt="Wigner-Function Noise Profiling" width="900"/>
-</p>
+
+ ![](wigner_analysis.png)
+
 
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white" alt="Python"></a>
