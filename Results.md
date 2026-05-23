@@ -139,43 +139,6 @@ print(f"Partition: {bitstring} → Max-Cut = {cut_weight:.4f}")
 ```python
 from landscape import ZNECalibrator
 
-# Standalone Richardson extrapolation
-zne = ZNECalibrator(degree=2)
-scales = [1.0, 1.5, 2.0]
-values = [-3.21, -3.05, -2.89]   # measured at each noise scale
-e_zero = zne.extrapolate(scales, values)
-print(f"ZNE estimate at λ=0: {e_zero:.4f}")
-```
-
----
-
-## Physics Background
-
-### QAOA (Quantum Approximate Optimization Algorithm)
-
-QAOA is a near-term quantum algorithm for combinatorial optimization. It prepares a parameterized state by alternating between:
-- **Cost layer**: `exp(−iγH_C)` — encodes the Max-Cut Hamiltonian via IsingZZ rotations
-- **Mixer layer**: `exp(−iβH_B)` — explores the solution space via RX rotations
-
-The cost Hamiltonian is:
-
-```
-H_C = Σ_{(i,j)∈E} w_{ij} · (I − Z_i Z_j) / 2
-```
-
-### Wigner Functions and Decoherence
-
-The Wigner function `W(x,p)` is a phase-space quasi-probability distribution. For a coherent state it is a positive Gaussian; decoherence broadens and smooths it, reducing (or eliminating) negativity. The peak amplitude `W_peak` serves as the coherence figure of merit — directly analogous to `|⟨b̂⟩|` in homodyne detection.
-
-### Zero-Noise Extrapolation (ZNE)
-
-ZNE intentionally amplifies gate noise by scale factors `{λ₁, λ₂, λ₃}` and measures the circuit at each level. A polynomial is fit to `(λ, E(λ))` and extrapolated to `λ=0`:
-
-```
-E_true ≈ P(0)   where   P(λ) fits [E(λ₁), E(λ₂), E(λ₃)]
-```
-
-This is the Richardson extrapolation analog of vacuum-substitution calibration.
 
 ---
 
