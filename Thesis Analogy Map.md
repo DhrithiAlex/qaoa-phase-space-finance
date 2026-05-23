@@ -5,7 +5,23 @@ This document provides a detailed mapping between the theoretical framework of
 (Dhrithi Maria, Universität Paderborn, 2026) and each component of this simulation.
 
 ---
+## Thesis Connection — Full Reference Map
 
+| Thesis Element | Simulation Equivalent |
+|---|---|
+| Chapter 1: Balanced homodyne setup | QAOA circuit (interference-based measurement) |
+| Chapter 2: Difference photocurrent operator | QAOA cost function  |
+| Chapter 2.1: Wigner function phase space | `wigner_calibrate.py` — W_ideal, W_noisy, W_zne |
+| Chapter 3: `⟨b̂⟩ ≠ 0` validity criterion | Wigner peak amplitude > 0 (coherence condition) |
+| Chapter 4: Law of total variance | ZNE Richardson extrapolation to λ=0 |
+| Chapter 4: Vacuum substitution calibration | Wigner-derived noise scale factor λ |
+| Chapter 5: D-criterion (non-classicality) | Cut weight vs. classical brute-force benchmark |
+| Chapter 5: Squeezed LO stress test | Noisy NISQ vs. ZNE-mitigated landscape |
+| Chapter 6: Covariance matrix reconstruction | Max-Cut partition (bitstring output of QAOA) |
+| Chapter 6: Eigenvalue squeezing cert. | Max-Cut eigenvalue analysis (landscape minima) |
+| Section 7.1.1: Future extensions | Multi-mode graphs, hardware-level ZNE, p > 1 |
+
+---
 ## Core Mathematical Isomorphism
 
 ### Thesis (Homodyne Detection)
@@ -157,3 +173,9 @@ Both measure what fraction of the true signal was successfully isolated from the
 | Frequency-dependent squeezing | Frequency-dependent noise model (non-Markovian) |
 | Real-time adaptive calibration | Online ZNE with adaptive scale selection |
 | Non-Gaussian state tomography | Shot-noise limited QAOA with measurement backaction |
+
+
+
+
+
+
