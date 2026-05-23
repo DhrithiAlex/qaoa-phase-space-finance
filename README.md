@@ -23,6 +23,10 @@
 
 This project demonstrates how insights from quantum optics (law-of-total-variance in homodyne detection) can be applied to mitigate noise in **QAOA** circuits for a real-world financial optimization problem: optimal execution routing across global silver futures venues.
 
+The core claim: **the mathematical structure of LO noise in balanced homodyne detection is isomorphic to gate decoherence noise in QAOA**, and the same calibration protocol (measuring and subtracting the noise contribution) can recover the true quantum signal in both settings.
+
+The application domain is **silver futures execution routing**: a Max-Cut problem over a 6-node graph of global trading venues, where QAOA determines the optimal partition of exchanges to minimize execution slippage, latency cost, and liquidity risk.
+
 **Key Innovation**: Wigner-function-based noise profiling → informed **Zero-Noise Extrapolation (ZNE)** for recovering clean energy landscapes on noisy quantum hardware.
 
 ---
